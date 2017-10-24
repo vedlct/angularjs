@@ -1,8 +1,4 @@
-
-
-
 <html>
-
 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -21,7 +17,7 @@
     <tr ng-repeat="x in names">
         <td> {{x.name}}</td>
         <td>{{x.country}}</td>
-        <td><button data-toggle="modal"  data-target="#edit-data" ng-click="edit(x.id)">edit</button></td>
+        <td><button  ng-click="edit(x.id)">edit</button></td>
     </tr>
 
 </table>
@@ -60,24 +56,25 @@ app.controller('userController', function($scope, $http, ) {
         .then(function (response) {$scope.names = response.data;});
 
     $scope.edit = function(id) {
-        $http({
-            method: 'POST',
-            url: 'country/editCountry/'+id,
-            data: form,  //this is where you set the data object you want to send
-        }).then(
-            function(res) {
-                console.log('succes !');
-                //do something here
-            },
-            function(err) {
-                console.log('error...');
-            }
-        );
+//        $http({
+//            method: 'POST',
+//            url: 'country/editCountry/'+id,
+//            data: form,  //this is where you set the data object you want to send
+//        }).then(
+//            function(res) {
+//                console.log('succes !');
+//                //do something here
+//            },
+//            function(err) {
+//                console.log('error...');
+//            }
+//        );
 //        $http.get('country/editCountry/' + id).then(function (data) {
 //
 //            $scope.form = data.data;
 //            console.log(data);
 //        });
+        location.href = '<?php echo base_url()?>country/viewedit/'+id;
     }
 
 

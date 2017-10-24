@@ -28,10 +28,18 @@ class country extends CI_Controller {
     public function editCountry($id){
 
 
-        $data = $this->Countrym->editCountry($id);
+        $data= $this->Countrym->editCountry($id);
 
-       // $this->load->view('model view', $this->data);
-        echo json_encode($data);
+       echo json_encode($data);
+        //$this->load->view('testeditview',json_encode($data[0]));
+
+    }
+    public function viewedit($id){
+
+        //print_r($id);
+        $this->data['id']=$id;
+
+        $this->load->view('newedit',$this->data);
     }
 
 

@@ -35,13 +35,13 @@
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <label>name</label>
                                 <div class="form-group">
-                                    <input ng-model="form.name" type="text"  name="title" class="form-control" required />
+                                    <input data-ng-model="form.name" type="text"  name="name" class="form-control" value="{{form.name}}" required />
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <label>country</label>
                                 <div class="form-group">
-                                    <input ng-model="form.country"  class="form-control" required>
+                                    <input data-ng-model="form.country"  name="country" value="{{form.country}" class="form-control" required>
                                     </input>
                                 </div>
                             </div>
